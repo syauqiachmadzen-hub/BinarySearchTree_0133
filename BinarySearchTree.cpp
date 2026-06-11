@@ -57,7 +57,7 @@ public:
             parent->rightchild = newNode;
         }
     }   
-}   
+   
     // This function searches the current node of the specified node
     // as well as the current node of its parent
     void search(string element, Node *&parent, Node *&currentNode)
@@ -107,3 +107,29 @@ public:
             preorder(ptr->rightchild);
         }
     }
+
+     void postorder(Node *ptr)
+    {
+
+        // performs the postorder traversal of the tree
+
+        if (ROOT == NULL)
+        {
+            cout << "Tree is empty" << endl;
+            return;
+        }
+
+        if (ptr != NULL)
+        {
+            postorder(ptr->leftchild);
+            postorder(ptr->rightchild);
+            cout << ptr->info << " ";
+        }
+    }
+};
+
+int main()
+{
+    BinaryTree obj;
+}    
+
